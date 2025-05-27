@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin Dashboard</title>
+<link rel="stylesheet" href="../assets/css/dashboard.css" />
+
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="sidebar">
+    <h2>Admin Panel</h2>
+    <ul>
+      <li><a href="#">Dashboard</a></li>
+      <li><a href="../pages/employees.html">Employee Details</a></li>
+      <li><a href="../pages/attendance.html">Attendance</a></li>
+      <li><button id="logoutBtn">Logout</button></li>
+    </ul>
+  </div>
+
+    <div class="main">
+    <div class="topbar">
+      <div class="topbar" style="display: flex; justify-content: center; align-items: center;">
+  <div id="dateTime" style="font-size: 24px; font-weight: bold; color: #333;"></div>
+</div>
+
+    <h1>Admin Dashboard</h1>
+
+    <div class="card-grid">
+      <div class="card">
+        <h2>Total Employees</h2>
+        <p id="employeeCount">0</p>
+      </div>
+      <div class="card">
+        <h2>Attendance %</h2>
+        <p id="attendanceCount">0%</p>
+      </div>
+      <div class="card">
+        <h2>Gender Distribution</h2>
+        <canvas id="genderChart"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <script src="../assets/js/dashboard.js"></script>
+</body>
+</html>

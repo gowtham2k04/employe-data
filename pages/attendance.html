@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Employee Attendance</title>
+   <link rel="stylesheet" href="../assets/css/attendance.css" />
+</head>
+<body>
+  <nav class="sidebar">
+    <h2>Admin Panel</h2>
+    <ul>
+      <li><a href="../pages/dashboard.html">Dashboard</a></li>
+      <li><a href="../pages/employees.html">Employee Details</a></li>
+      <li><a href="#" class="active">Attendance</a></li>
+    </ul>
+    <button id="logoutBtn">Logout</button>
+  </nav>
+
+  <main>
+     <div class="main">
+    <div class="topbar">
+      <div class="topbar" style="display: flex; justify-content: center; align-items: center;">
+  <div id="dateTime" style="font-size: 24px; font-weight: bold; color: #333;"></div>
+</div>
+
+    <h1>Employee Attendance</h1>
+    <div id="attendanceList">
+     
+      <!-- Employee attendance items will appear here -->
+    </div>
+    <div id="attendanceList"></div>
+
+<div style="margin-bottom: 20px;">
+  <input type="text" id="searchName" placeholder="Search by name..." style="padding: 5px; margin-right: 10px;" />
+  <select id="shiftFilter" style="padding: 5px;">
+    <option value="">All Shifts</option>
+    <option value="Day">Day</option>
+    <option value="Night">Night</option>
+  </select>
+</div>
+<button id="downloadBtn">Download Attendance (.xlsx)</button>
+
+  <h2>Attendance Summary</h2>
+  <table id="summaryTable" border="1" cellspacing="0" cellpadding="5" style="width: 100%; margin-top: 20px;">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Shift</th>
+        <th>Status</th>
+        <th>Last Updated</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Summary rows will go here -->
+    </tbody>
+  </table>
+</div>
+
+  </main> 
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
+  <script src="../assets/js/attendance.js"></script>
+</body>
+</html>

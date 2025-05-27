@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - Employee System</title>
+  <link rel="stylesheet" href="../assets/css/login.css">
+
+  <!-- Firebase SDKs -->
+  <script type="module">
+    // Import necessary Firebase modules
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+    import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyChNbulqvR8W3-w3LJ270goc7dD0-LMaRI",
+      authDomain: "admin--registration.firebaseapp.com",
+      projectId: "admin--registration",
+      storageBucket: "admin--registration.firebasestorage.app",
+      messagingSenderId: "1454420952",
+      appId: "1:1454420952:web:cab6129bc326e8bcb838ad",
+      measurementId: "G-CWCSHDX333"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const analytics = getAnalytics(app);
+
+    // Handle user login
+    document.getElementById('loginForm').addEventListener('submit', function (e) {
+      e.preventDefault(); // Prevent the form from submitting the default way
+
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+
+      // Debugging: Log the entered values
+      console.log("Email:", email);
+      console.log("Password:", password);
+
+      // Login user with Firebase Authentication
+      signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          // User logged in successfully
+          const user = userCredential.user;
+          console.log("User logged in:", user);
+
+          // Redirect to the employee page after successful login
+          window.location.href = "../pages/dashboard.html"; // You can change this URL as per your setup
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          console.error("Error logging in:", errorCode, errorMessage);
+          alert("Error logging in: " + errorMessage); // Show error to user
+        });
+    });
+  </script>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Login</h2>
+    <form id="loginForm">
+      <input type="email" id="email" placeholder="Email" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <button type="submit">Login</button>
+    </form>
+    <p>Don't have an account? <a href="../index.html">Register here</a></p>
+  </div>
+</body>
+</html>

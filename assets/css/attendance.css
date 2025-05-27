@@ -1,0 +1,197 @@
+    body {
+      margin: 0;
+       font-family: 'Segoe UI', sans-serif;
+      display: flex;
+    }
+    nav.sidebar {
+      width: 220px;
+      background: #1f2937;
+      color: #fff;
+      min-height: 100vh;
+      padding: 20px;
+      box-sizing: border-box;
+      font-family:'Segoe UI', sans-serif;
+    }
+    nav.sidebar h2 {
+      margin-top: 0;
+      margin-bottom: 20px;
+      font-weight: bold;
+        font-family:'Segoe UI', sans-serif;
+
+    }
+    nav.sidebar ul {
+      list-style: none;
+      padding: 0;
+        font-family:'Segoe UI', sans-serif;
+    }
+    nav.sidebar ul li {
+      margin-bottom: 15px;
+        font-family:'Segoe UI', sans-serif;
+    }
+    nav.sidebar ul li a {
+      color: #ccc;
+      text-decoration: none;
+      font-size: 16px;
+      display: block;
+      padding: 8px 12px;
+      border-radius: 4px;
+        font-family:'Segoe UI', sans-serif;
+        font-weight: bold;
+    }
+    nav.sidebar ul li a.active,
+    nav.sidebar ul li a:hover {
+      background: #007bff;
+      color: white;
+    }
+    nav.sidebar button#logoutBtn {
+      margin-top: 30px;
+      padding: 10px 15px;
+      width: 100%;
+      border: none;
+      background: #f44336;
+      color: white;
+      cursor: pointer;
+      font-size: 16px;
+      border-radius: 4px;
+       font-family:'Segoe UI', sans-serif;
+        font-weight: bold;
+    }
+    main {
+      flex: 1;
+      padding: 20px;
+      box-sizing: border-box;
+      background: #f5f5f5;
+      min-height: 100vh;
+    }
+    h1 {
+      margin-top: 0;
+    }
+    .employee {
+      background: white;
+      margin-bottom: 10px;
+      padding: 15px;
+      border-radius: 6px;
+      box-shadow: 0 1px 4px rgb(0 0 0 / 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .employee span {
+      font-weight: 600;
+      font-size: 16px;
+      flex: 1 1 150px;
+    }
+    .attendance-buttons button {
+      margin-left: 10px;
+      padding: 7px 15px;
+      font-size: 14px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      color: white;
+    }
+    .present-btn {
+      background-color: #4caf50;
+    }
+    .absent-btn {
+      background-color: #f44336;
+    }
+    .present-btn.selected {
+      box-shadow: 0 0 10px #4caf50;
+    }
+    .absent-btn.selected {
+      box-shadow: 0 0 10px #f44336;
+    }
+    @media (max-width: 600px) {
+      nav.sidebar {
+        display: none;
+      }
+      main {
+        padding: 10px;
+      }
+      .employee {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .attendance-buttons {
+        margin-top: 10px;
+      }
+    }.employee {
+  border: 1px solid #ddd;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.employee span {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+.shift-buttons, .attendance-buttons {
+  margin-bottom: 8px;
+}
+
+.shift-btn, .present-btn, .absent-btn {
+  padding: 6px 12px;
+  margin-right: 6px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  background-color: #eee;
+  transition: background-color 0.3s ease;
+}
+
+.shift-btn.selected {
+  background-color: #007bff;
+  color: white;
+}
+
+.present-btn.selected {
+  background-color: #28a745;
+  color: white;
+}
+
+.absent-btn.selected {
+  background-color: #dc3545;
+  color: white;
+}
+
+.shift-btn:disabled,
+.present-btn:disabled,
+.absent-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.datetime-info {
+  font-size: 0.85em;
+  color: #555;
+}
+#attendanceSummary {
+  margin-top: 30px;
+}
+
+#attendanceSummary table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#attendanceSummary th, #attendanceSummary td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+}
+
+#attendanceSummary th {
+  background-color: #f0f0f0;
+  color: #222;
+}
+
+button.selected {
+  background-color: #4caf50;
+  color: white;
+}
